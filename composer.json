@@ -25,6 +25,9 @@
     "conflict": {
         "drupal/drupal": "*"
     },
+    "autoload": {
+        "files": ["load.environment.php"]
+    },
     "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
