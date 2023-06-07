@@ -22,6 +22,7 @@
 /sites/example.*
 /sites/README.txt
 /sites/*/default.*
+/themes/README.txt
 
 # Ignore SimpleTest multi-site environment.
 /sites/simpletest
