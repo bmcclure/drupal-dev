@@ -1,13 +1,32 @@
-name: lando-d9
-recipe: drupal9
+name: drupal-dev
+recipe: drupal10
+
 compose:
   - docker-compose.network-mtu.yml
+
 config:
-  webroot: .
+  webroot: web
+  via: nginx
+  php: 8.1
+
 services:
   appserver:
+    xdebug: false
     ssl: false
+
   phpmyadmin:
     type: phpmyadmin
     hosts:
       - database
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug in the appserver.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Xdebug enabled"
+    user: root
+
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug in the appserver.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Xdebug disabled"
+    user: root
