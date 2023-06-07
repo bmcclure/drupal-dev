@@ -1,0 +1,24 @@
+# Ignore core when managing all of a project's dependencies with Composer
+# including Drupal core.
+/core
+/modules/contrib
+/profiles/contrib
+/sites/*/files
+/sites/*/private
+/.csslintrc
+/.eslint*
+/.ht.router.php
+/.htaccess
+/autoload.php
+/example.gitignore
+/index.php
+/INSTALL.txt
+/README.md
+/robots.txt
+/update.php
+/web.config
+/modules/README.txt
+/profiles/README.txt
+
+# Ignore SimpleTest multi-site environment.
+/sites/simpletest
