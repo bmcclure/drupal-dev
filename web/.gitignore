@@ -19,6 +19,9 @@
 /web.config
 /modules/README.txt
 /profiles/README.txt
+/sites/example.*
+/sites/README.txt
+/sites/*/default.*
 
 # Ignore SimpleTest multi-site environment.
 /sites/simpletest
